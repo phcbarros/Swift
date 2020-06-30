@@ -9,9 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBAction func adicionar2(_ sender: Any) {
-        print("alimento: ---")
+    
+    @IBAction func adicionar(_ sender: Any) {
+        let nome = "Churros"
+        let felicidade = "5"
+        print("comi \(nome) e fiquei com \(felicidade)")
     }
+    
 }
-

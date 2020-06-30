@@ -41,12 +41,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMO-Vn-81K">
-                                <rect key="frame" x="138" y="288" width="65" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDv-hL-3be">
+                                <rect key="frame" x="159" y="282" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Adicionar"/>
                                 <connections>
-                                    <action selector="adicionar2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y1G-AP-jJI"/>
+                                    <action selector="adicionar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ER-F8-pCI"/>
                                 </connections>
                             </button>
                         </subviews>
