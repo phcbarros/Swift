@@ -1,11 +1,12 @@
 import UIKit
 
-var nome: String = "Paulo Henrique"
-nome = "Elisa"
+/*
+ Comentários com mais de uma linha
+ 
+ command + / = comenta as linhas
+ */
 
-var endereco = "Suzano"
-
-//constantes
-let idade = 32
-
-print(nome, idade)
+let nome = "pastel"
+let felicidade: Int = 5
+let calorias: Double = 80.7
+let gostou: Bool = true
