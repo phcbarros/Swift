@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28832ECA24ABF5DE0027DAF3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../../MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2894251224AA6A6100C7E471 /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2894251524AA6A6100C7E471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2894251724AA6A6100C7E471 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 				2894251924AA6A6100C7E471 /* ViewController.swift */,
 				2894251B24AA6A6100C7E471 /* Main.storyboard */,
 				2894251E24AA6A6300C7E471 /* Assets.xcassets */,
+				28832ECA24ABF5DE0027DAF3 /* MyPlayground.playground */,
 				2894252024AA6A6300C7E471 /* LaunchScreen.storyboard */,
 				2894252324AA6A6300C7E471 /* Info.plist */,
 			);
