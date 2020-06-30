@@ -32,3 +32,28 @@ func comeu(_ nome: String, _ calorias: Double) {
 
 comeu(nome, calorias)
 
+// Arrays e tipos de laço for
+
+let totalDeCalorias = [20.3, 50.5, 670.8, 100, 99]
+
+// Primeira for de escrever um for
+print("Primeira for de escrever um for")
+for i in 0...3 {
+    print("index: \(i)")
+    print(totalDeCalorias[i])
+}
+
+// Segunda formam de escrever um for
+print("Segunda formam de escrever um for")
+for i in 0...totalDeCalorias.count - 1 {
+    print("index: \(i)")
+    print(totalDeCalorias[i])
+}
+
+// Terceira formam de escrever um for
+// for in
+print("Terceira formam de escrever um for")
+
+for caloria in totalDeCalorias {
+    print(caloria)
+}
