@@ -86,10 +86,13 @@ print("Total de calorias: \(total)")
 */
 
 class Refeicao {
-    let nome: String = "Comida japonesa"
-    let felicidade: String = "5"
+    var nome: String?
+    var felicidade: String?
 }
 
 let refeicao = Refeicao()
-print(refeicao.nome)
+refeicao.nome = "comida japonesa"
+
+// Cuidade => forced unwrap (evitar)
+print(refeicao.nome!)
 
