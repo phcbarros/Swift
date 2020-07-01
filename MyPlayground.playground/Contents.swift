@@ -81,3 +81,15 @@ let total = somarTodasAsCalorias(totalDeCalorias: [60, 50, 45.6])
 print("Total de calorias: \(total)")
 
 
+/*
+   Classes
+*/
+
+class Refeicao {
+    let nome: String = "Comida japonesa"
+    let felicidade: String = "5"
+}
+
+let refeicao = Refeicao()
+print(refeicao.nome)
+
