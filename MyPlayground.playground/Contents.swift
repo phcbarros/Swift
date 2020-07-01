@@ -93,6 +93,34 @@ class Refeicao {
 let refeicao = Refeicao()
 refeicao.nome = "comida japonesa"
 
-// Cuidade => forced unwrap (evitar)
-print(refeicao.nome!)
 
+if refeicao.nome != nil {
+    // Cuidado => forced unwrap (evitar)
+    print(refeicao.nome!)
+}
+
+// Boas práticas para extrair valores opcionais
+
+func exibirNomeDaRefeicao() {
+    /*
+        if let
+        a variável só existe no escopo do if
+    */
+    if let nome = refeicao.nome {
+        print("Usando if let \(nome.uppercased())")
+    }
+    
+    // print(nome) // error
+    
+    /*
+        guard let
+        Consegue reutilizar a variável fora do escopo do if
+     */
+    guard let nome = refeicao.nome else {
+        return
+    }
+    
+    print("Usando guard let \(nome)")
+}
+
+exibirNomeDaRefeicao()
