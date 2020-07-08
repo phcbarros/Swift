@@ -85,12 +85,12 @@ print("Total de calorias: \(total)")
    Classes
 */
 
-class Refeicao {
+class Refeicao1 {
     var nome: String?
     var felicidade: String?
 }
 
-let refeicao = Refeicao()
+let refeicao = Refeicao1()
 refeicao.nome = "comida japonesa"
 
 
@@ -114,7 +114,7 @@ func exibirNomeDaRefeicao() {
     
     /*
         guard let
-        Consegue reutilizar a variável fora do escopo do if
+        Consegue reutilizar a variável fora do escopo do if, o else é obrigatório
      */
     guard let nome = refeicao.nome else {
         return
@@ -124,3 +124,22 @@ func exibirNomeDaRefeicao() {
 }
 
 exibirNomeDaRefeicao()
+
+class Refeicao {
+    
+    // MARK: - Atributos
+    var nome: String
+    var felicidade: String
+    
+    // MARK: - Constutor
+    
+    init(nome: String, felicidade: String) {
+        self.nome = nome
+        self.felicidade = felicidade
+    }
+    
+}
+
+let novaRefeicao = Refeicao(nome: "Temaki", felicidade: "5")
+
+print(novaRefeicao.nome)
