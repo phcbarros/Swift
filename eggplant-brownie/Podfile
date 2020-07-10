@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.4'
+
+target 'eggplant-brownie' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for eggplant-brownie
+  # Add the pod for Firebase Crashlytics
+  pod 'Firebase/Crashlytics'
+
+  # Recommended: Add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+
+end

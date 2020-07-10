@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>769984594336-umboo868lhea3chmcmvqpg7ga535gcjj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.769984594336-umboo868lhea3chmcmvqpg7ga535gcjj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBssCkzkXm4ykYu_GlFrv8gAz71lCXOCbY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>769984594336</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>eggplant-brownie</string>
+	<key>PROJECT_ID</key>
+	<string>exemplo-documentacao</string>
+	<key>STORAGE_BUCKET</key>
+	<string>exemplo-documentacao.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:769984594336:ios:b8d16b06fabd3485f864c5</string>
+	<key>DATABASE_URL</key>
+	<string>https://exemplo-documentacao.firebaseio.com</string>
+</dict>
+</plist>

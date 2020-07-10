@@ -3,23 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2815D17B24B7B98C0043DA08 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815D17A24B7B98C0043DA08 /* Refeicao.swift */; };
 		2815D17D24B7B9D40043DA08 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815D17C24B7B9D40043DA08 /* Item.swift */; };
+		2853882B24B9139D0023A562 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2853882A24B9139D0023A562 /* GoogleService-Info.plist */; };
+		2853882E24B91A560023A562 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2853882D24B91A560023A562 /* GoogleService-Info.plist */; };
 		2894251624AA6A6100C7E471 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894251524AA6A6100C7E471 /* AppDelegate.swift */; };
 		2894251824AA6A6100C7E471 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894251724AA6A6100C7E471 /* SceneDelegate.swift */; };
 		2894251A24AA6A6100C7E471 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894251924AA6A6100C7E471 /* ViewController.swift */; };
 		2894251D24AA6A6100C7E471 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2894251B24AA6A6100C7E471 /* Main.storyboard */; };
 		2894251F24AA6A6300C7E471 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2894251E24AA6A6300C7E471 /* Assets.xcassets */; };
 		2894252224AA6A6300C7E471 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2894252024AA6A6300C7E471 /* LaunchScreen.storyboard */; };
+		71C9D881BFD33E99B9B85103 /* Pods_eggplant_brownie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C56FAA7CEFF92041F2E7BB /* Pods_eggplant_brownie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2815D17A24B7B98C0043DA08 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
 		2815D17C24B7B9D40043DA08 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2853882A24B9139D0023A562 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/Pasta Sem Título/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2853882D24B91A560023A562 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/Pasta Sem Título/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28832ECA24ABF5DE0027DAF3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../../MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2894251224AA6A6100C7E471 /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2894251524AA6A6100C7E471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +34,9 @@
 		2894251E24AA6A6300C7E471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2894252124AA6A6300C7E471 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2894252324AA6A6300C7E471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		335DA4435031733AF8750DE9 /* Pods-eggplant-brownie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eggplant-brownie.debug.xcconfig"; path = "Target Support Files/Pods-eggplant-brownie/Pods-eggplant-brownie.debug.xcconfig"; sourceTree = "<group>"; };
+		66F2DFA8F4E57492C39AF69E /* Pods-eggplant-brownie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eggplant-brownie.release.xcconfig"; path = "Target Support Files/Pods-eggplant-brownie/Pods-eggplant-brownie.release.xcconfig"; sourceTree = "<group>"; };
+		96C56FAA7CEFF92041F2E7BB /* Pods_eggplant_brownie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eggplant_brownie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,12 +44,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C9D881BFD33E99B9B85103 /* Pods_eggplant_brownie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		269BEB441E76D6E97A6B7B01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				335DA4435031733AF8750DE9 /* Pods-eggplant-brownie.debug.xcconfig */,
+				66F2DFA8F4E57492C39AF69E /* Pods-eggplant-brownie.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2815D17E24B7BAD50043DA08 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +90,8 @@
 			children = (
 				2894251424AA6A6100C7E471 /* eggplant-brownie */,
 				2894251324AA6A6100C7E471 /* Products */,
+				269BEB441E76D6E97A6B7B01 /* Pods */,
+				4F83AE81A4E444D59B63A480 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,17 +106,27 @@
 		2894251424AA6A6100C7E471 /* eggplant-brownie */ = {
 			isa = PBXGroup;
 			children = (
+				2853882D24B91A560023A562 /* GoogleService-Info.plist */,
 				2894251724AA6A6100C7E471 /* SceneDelegate.swift */,
 				2894251524AA6A6100C7E471 /* AppDelegate.swift */,
 				2815D17E24B7BAD50043DA08 /* Models */,
 				2815D18024B7BB320043DA08 /* Views */,
 				2815D17F24B7BB0A0043DA08 /* Controllers */,
 				2894251E24AA6A6300C7E471 /* Assets.xcassets */,
+				2853882A24B9139D0023A562 /* GoogleService-Info.plist */,
 				28832ECA24ABF5DE0027DAF3 /* MyPlayground.playground */,
 				2894252024AA6A6300C7E471 /* LaunchScreen.storyboard */,
 				2894252324AA6A6300C7E471 /* Info.plist */,
 			);
 			path = "eggplant-brownie";
+			sourceTree = "<group>";
+		};
+		4F83AE81A4E444D59B63A480 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96C56FAA7CEFF92041F2E7BB /* Pods_eggplant_brownie.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2894252624AA6A6300C7E471 /* Build configuration list for PBXNativeTarget "eggplant-brownie" */;
 			buildPhases = (
+				BFA01B3EE2A8DEE948505FCC /* [CP] Check Pods Manifest.lock */,
 				2894250E24AA6A6100C7E471 /* Sources */,
 				2894250F24AA6A6100C7E471 /* Frameworks */,
 				2894251024AA6A6100C7E471 /* Resources */,
+				F82F8823CAC391A8D05D271F /* [CP] Embed Pods Frameworks */,
+				2853882C24B913D80023A562 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -158,12 +191,73 @@
 			buildActionMask = 2147483647;
 			files = (
 				2894252224AA6A6300C7E471 /* LaunchScreen.storyboard in Resources */,
+				2853882B24B9139D0023A562 /* GoogleService-Info.plist in Resources */,
+				2853882E24B91A560023A562 /* GoogleService-Info.plist in Resources */,
 				2894251F24AA6A6300C7E471 /* Assets.xcassets in Resources */,
 				2894251D24AA6A6100C7E471 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2853882C24B913D80023A562 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		BFA01B3EE2A8DEE948505FCC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eggplant-brownie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F82F8823CAC391A8D05D271F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eggplant-brownie/Pods-eggplant-brownie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eggplant-brownie/Pods-eggplant-brownie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eggplant-brownie/Pods-eggplant-brownie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2894250E24AA6A6100C7E471 /* Sources */ = {
@@ -316,9 +410,11 @@
 		};
 		2894252724AA6A6300C7E471 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 335DA4435031733AF8750DE9 /* Pods-eggplant-brownie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = "eggplant-brownie/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,6 +429,7 @@
 		};
 		2894252824AA6A6300C7E471 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66F2DFA8F4E57492C39AF69E /* Pods-eggplant-brownie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
