@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var tableViewControler: RefeicoesTableViewController? // usa var pois a instância é setada na RefeicoesTableController
+    
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet weak var felicidadeTextField: UITextField?
     
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
         let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade)
         print("comi \(refeicao.nome) e fiquei com felicidade \(refeicao.felicidade)")
         
+        tableViewControler?.add(refeicao)
         navigationController?.popViewController(animated: true)
     }
     
