@@ -49,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   ) -> Bool {
     UITabBar.appearance().barTintColor = UIColor.themeGreenColor
     UITabBar.appearance().tintColor = UIColor.white
+    
+    UNUserNotificationCenter.current().delegate = self
 
     registerForPushNotifications()
     
@@ -133,6 +135,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return
     }
     NewsItem.makeNewsItem(aps);
-    //(window?.rootViewController as? UITabBarController)?.selectedIndex = 1
+  }
+  
+}
+
+// MARK: - UNUserNotificationCenterDelegate
+extension AppDelegate: UNUserNotificationCenterDelegate {
+  func userNotificationCenter(
+    _ center: UNUserNotificationCenter,
+    didReceive response: UNNotificationResponse,
+    withCompletionHandler completionHandler: @escaping () -> Void
+  ){
+    let userInfo = response.notification.request.content.userInfo
+    
+    if
+      let aps = userInfo["aps"] as? [String: AnyObject],
+      let newsItem = NewsItem.makeNewsItem(aps){
+      (window?.rootViewController as? UITabBarController)?.selectedIndex = 1
+      
+      if
+        response.actionIdentifier == Identifiers.viewAction,
+        let url = URL(string: newsItem.link){
+        let safari = SFSafariViewController(url: url)
+        window?.rootViewController?.present(safari, animated: true, completion: nil)
+      }
+    }
+    
+    completionHandler()
   }
 }
