@@ -72,10 +72,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       .requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted,  _ in
         print("Permission granted: \(granted)")
         guard granted else { return }
+        
+        let viewAction = UNNotificationAction(
+          identifier: Identifiers.viewAction,
+          title: "View",
+          options: [.foreground]
+        )
+        
+        let newsCategory = UNNotificationCategory(
+          identifier: Identifiers.newsCategory,
+          actions: [viewAction],
+          intentIdentifiers: [],
+          options: []
+        )
+        
+        UNUserNotificationCenter.current().setNotificationCategories([newsCategory])
         self?.getNotificationSettings()
       }
   }
   
+  // Get information about notification
   func getNotificationSettings() {
     UNUserNotificationCenter.current()
       .getNotificationSettings { settings in
