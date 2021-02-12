@@ -68,6 +68,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UNUserNotificationCenter.current()
       .getNotificationSettings { settings in
         print("Notification settings: \(settings)")
+        guard settings.authorizationStatus == .authorized else { return }
+        DispatchQueue.main.async {
+          UIApplication.shared.registerForRemoteNotifications()
+        }
       }
+  }
+  
+  func application(
+    _ application: UIApplication,
+    didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+  ){
+    let tokenParts = deviceToken.map { data in String(format:  "%02.2hhx", data) }
+    let token = tokenParts.joined()
+    print("Device TokenL: \(token)")
+  }
+  
+  func application(
+    _ application: UIApplication,
+    didFailToRegisterForRemoteNotificationsWithError error: Error
+  ){
+    print("Failed to register:  \(error)")
   }
 }
