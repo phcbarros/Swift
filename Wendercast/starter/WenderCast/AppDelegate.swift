@@ -134,7 +134,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       completionHandler(.failed)
       return
     }
-    NewsItem.makeNewsItem(aps);
+    
+    if aps["content-available"] as? Int == 1 {
+      print("Silent push")
+      //var alert =  UIAlertView(title: "Push", message: "Silent Push", delegate: self, cancelButtonTitle: "Cancel")
+      
+      let podcastStore = PodcastStore.sharedStore
+      podcastStore.refreshItems { didLoadNewItems in
+        completionHandler(didLoadNewItems ? .newData : .noData)
+      }
+    } else {
+      NewsItem.makeNewsItem(aps)
+      completionHandler(.newData)
+    }
   }
   
 }
