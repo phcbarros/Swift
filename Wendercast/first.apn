@@ -2,7 +2,8 @@
     "aps": {
         "alert": "Breaking News",
         "sound": "default",
-        "badge": 0
+        "badge": 0,
+        "link_url": "https://raywenderlich.com"
     },
     "link_url": "https://raywenderlich.com"
 }

@@ -52,6 +52,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     registerForPushNotifications()
     
+    // Check if lauched from notification
+    let notificationOption = launchOptions?[.remoteNotification]
+    print("launched \(notificationOption)")
+    
+    if
+      let notification = notificationOption as? [String: AnyObject],
+      let aps = notification["aps"] as? [String: AnyObject]
+      {
+      NewsItem.makeNewsItem(aps)
+      (window?.rootViewController as? UITabBarController)?.selectedIndex = 1
+    }
+    
     return true
   }
   
@@ -75,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
   }
   
+  // Success registerForPushNotification
   func application(
     _ application: UIApplication,
     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
@@ -84,10 +97,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("Device TokenL: \(token)")
   }
   
+  // Fail  registerForPushNotification
   func application(
     _ application: UIApplication,
     didFailToRegisterForRemoteNotificationsWithError error: Error
   ){
     print("Failed to register:  \(error)")
+  }
+  
+  // Handle notification when app is running
+  func application(
+    _  application: UIApplication,
+    didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+    fetchCompletionHandler completionHandler:
+    @escaping (UIBackgroundFetchResult) -> Void
+  ) {
+    guard let aps = userInfo["aps"] as? [String: AnyObject] else {
+      completionHandler(.failed)
+      return
+    }
+    NewsItem.makeNewsItem(aps);
+    //(window?.rootViewController as? UITabBarController)?.selectedIndex = 1
   }
 }
