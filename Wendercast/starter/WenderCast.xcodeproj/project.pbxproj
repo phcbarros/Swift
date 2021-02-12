@@ -47,6 +47,7 @@
 		4DFFBA8E1BFAD20C00A24C84 /* PodcastItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastItem.swift; sourceTree = "<group>"; };
 		4DFFBA901BFAD24100A24C84 /* PodcastFeedLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastFeedLoader.swift; sourceTree = "<group>"; };
 		4DFFBA921BFAD28600A24C84 /* NewsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NewsStore.swift; sourceTree = "<group>"; tabWidth = 2; };
+		54CC638925D6B0F100D623F4 /* WenderCast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WenderCast.entitlements; sourceTree = "<group>"; };
 		958AD3C52158BA76000C57A4 /* WenderSafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WenderSafariViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +94,7 @@
 		4DFFBA711BFACF0700A24C84 /* WenderCast */ = {
 			isa = PBXGroup;
 			children = (
+				54CC638925D6B0F100D623F4 /* WenderCast.entitlements */,
 				4DFFBA721BFACF0700A24C84 /* AppDelegate.swift */,
 				4DFFBA761BFACF0700A24C84 /* Main.storyboard */,
 				4DFFBA8A1BFAD1D400A24C84 /* Models */,
@@ -391,6 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WenderCast/WenderCast.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
@@ -410,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WenderCast/WenderCast.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
