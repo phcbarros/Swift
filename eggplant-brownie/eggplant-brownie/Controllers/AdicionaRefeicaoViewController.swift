@@ -14,10 +14,16 @@ protocol AdicionaRefeicaoDelegate {
 
 class AdicionaRefeicaoViewController: UIViewController {
     
+    // MARK: - Atributos
+    
     var delegate: AdicionaRefeicaoDelegate? // usa var pois a instância é setada na RefeicoesTableController
     
+    // MARK: - IBOutlets
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet weak var felicidadeTextField: UITextField?
+    
+    
+    // MARK: - IBActions
     
     @IBAction func adicionar(_ sender: Any) {
         
