@@ -110,11 +110,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2eP-CY-kqe">
-                                <rect key="frame" x="7" y="322" width="407" height="483"/>
+                                <rect key="frame" x="0.0" y="309" width="394" height="505"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="JYk-t6-snz"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="i8n-pP-bUx"/>
                                 </connections>
                             </tableView>
                         </subviews>
