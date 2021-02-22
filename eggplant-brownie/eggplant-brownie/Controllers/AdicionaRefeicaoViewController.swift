@@ -17,7 +17,7 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     // MARK: - Atributos
     
     var delegate: AdicionaRefeicaoDelegate? // usa var pois a instância é setada na RefeicoesTableController
-    let items: [Item] = [
+    let itens: [Item] = [
         Item(nome: "Peixe", calorias: 40.0),
         Item(nome: "Farinha de Trigo", calorias: 40.0),
         Item(nome: "Arroz", calorias: 40.0),
@@ -25,7 +25,7 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
         Item(nome: "Vegetais", calorias: 40.0),
         Item(nome: "Molho para Yakisoba", calorias: 40.0)
     ]
-    var selectedItems: [Item] = []
+    var itensSelecionados: [Item] = []
     
     // MARK: - IBOutlets
     @IBOutlet var nomeTextField: UITextField?
@@ -34,13 +34,13 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return itens.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = UITableViewCell(style: .default, reuseIdentifier: nil)
         let linhaDaTabela = indexPath.row
-        let item = items[linhaDaTabela]
+        let item = itens[linhaDaTabela]
         celula.textLabel?.text = item.nome
         return celula;
     }
@@ -51,13 +51,18 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let celula = tableView.cellForRow(at: indexPath) else { return }
 
+        let linhaDaTabela = indexPath.row
+        let itemSelecionado = itens[linhaDaTabela]
         if celula.accessoryType ==  .none {
             celula.accessoryType = .checkmark
             
-            let linhaDaTabela = indexPath.row
-            selectedItems.append(items[linhaDaTabela])
+            itensSelecionados.append(itemSelecionado)
         } else {
             celula.accessoryType = .none
+           
+            if let position = itensSelecionados.firstIndex(of: itemSelecionado) {
+                itensSelecionados.remove(at: position)
+            }
         }
     }
     
@@ -86,8 +91,13 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
             return
         }
         
-        let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: selectedItems)
+        let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: itensSelecionados)
         print("comi \(refeicao.nome) e fiquei com felicidade \(refeicao.felicidade)")
+        var ingredients = "Lista de ingredientes: "
+        for item: Item in itensSelecionados {
+            ingredients += item.nome + ", "
+        }
+        print(ingredients)
         
         delegate?.add(refeicao)
         navigationController?.popViewController(animated: true)
