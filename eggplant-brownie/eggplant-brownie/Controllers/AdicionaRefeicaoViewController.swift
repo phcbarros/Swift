@@ -17,7 +17,15 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     // MARK: - Atributos
     
     var delegate: AdicionaRefeicaoDelegate? // usa var pois a instância é setada na RefeicoesTableController
-    let items: [String] = ["Peixe",  "Farinha de Trigo", "Arroz", "Macarrão", "Vegetais", "Molho para Yakisoba", "Alga"]
+    let items: [Item] = [
+        Item(nome: "Peixe", calorias: 40.0),
+        Item(nome: "Farinha de Trigo", calorias: 40.0),
+        Item(nome: "Arroz", calorias: 40.0),
+        Item(nome: "Macarrão", calorias: 40.0),
+        Item(nome: "Vegetais", calorias: 40.0),
+        Item(nome: "Molho para Yakisoba", calorias: 40.0)
+    ]
+    var selectedItems: [Item] = []
     
     // MARK: - IBOutlets
     @IBOutlet var nomeTextField: UITextField?
@@ -33,7 +41,7 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
         let celula = UITableViewCell(style: .default, reuseIdentifier: nil)
         let linhaDaTabela = indexPath.row
         let item = items[linhaDaTabela]
-        celula.textLabel?.text = item
+        celula.textLabel?.text = item.nome
         return celula;
     }
     
@@ -45,6 +53,9 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
 
         if celula.accessoryType ==  .none {
             celula.accessoryType = .checkmark
+            
+            let linhaDaTabela = indexPath.row
+            selectedItems.append(items[linhaDaTabela])
         } else {
             celula.accessoryType = .none
         }
@@ -75,7 +86,7 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
             return
         }
         
-        let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade)
+        let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: selectedItems)
         print("comi \(refeicao.nome) e fiquei com felicidade \(refeicao.felicidade)")
         
         delegate?.add(refeicao)
