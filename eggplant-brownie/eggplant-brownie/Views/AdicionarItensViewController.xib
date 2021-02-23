@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdicionarItensViewController" customModule="eggplant_brownie" customModuleProvider="target">
             <connections>
+                <outlet property="caloriasTextField" destination="FUq-xD-pRP" id="606-Xd-Li8"/>
+                <outlet property="nomeTextField" destination="73d-Hv-QQC" id="UIq-vP-ofl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -43,7 +45,7 @@
                     <rect key="frame" x="122" y="210" width="209" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1L-D7-Adl">
                     <rect key="frame" x="172" y="266" width="65" height="30"/>

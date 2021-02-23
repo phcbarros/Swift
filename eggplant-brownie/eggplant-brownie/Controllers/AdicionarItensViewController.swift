@@ -15,8 +15,22 @@ class AdicionarItensViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    // MARK: - IBOutlet
+    
+    @IBOutlet var nomeTextField: UITextField?
+    @IBOutlet var caloriasTextField: UITextField?
+    
     // MARK: - IBAction
+    
     @IBAction func adicionarItem() {
-        navigationController?.popViewController(animated: true)
+        
+        guard let nome = nomeTextField?.text, let calorias = caloriasTextField?.text else {
+            return
+        }
+        
+        if let numeroDeCalorias = Double(calorias) {
+            let item = Item(nome: nome , calorias: numeroDeCalorias)
+            navigationController?.popViewController(animated: true)
+        }
     }
 }
