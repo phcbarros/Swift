@@ -32,7 +32,7 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var felicidadeTextField: UITextField?
     
     
-    // MARK: - View life cicle
+    // MARK: - View life cycle
     override func viewDidLoad() {
         let botaoAdicionarItem = UIBarButtonItem(title: "Add Item", style: .plain, target: self, action: #selector(adicionarItem))
         
@@ -42,6 +42,8 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     // adiciona @objc para o método poder ser usado em objective c
     @objc func adicionarItem() -> Void {
         print("adicionar item")
+        let adicionarItensViewController = AdicionarItensViewController()
+        navigationController?.pushViewController(adicionarItensViewController, animated: true)
     }
     
     // MARK: - UITableViewDataSource

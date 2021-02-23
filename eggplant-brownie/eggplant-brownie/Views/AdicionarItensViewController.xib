@@ -49,11 +49,14 @@
                     <rect key="frame" x="172" y="266" width="65" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Adicionar"/>
+                    <connections>
+                        <action selector="adicionarItem" destination="-1" eventType="touchUpInside" id="U1J-IX-Y2B"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="137.68115942028987" y="43.526785714285715"/>
+            <point key="canvasLocation" x="137.68115942028987" y="43.206521739130437"/>
         </view>
     </objects>
     <resources>
