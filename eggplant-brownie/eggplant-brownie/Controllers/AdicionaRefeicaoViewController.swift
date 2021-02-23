@@ -12,18 +12,22 @@ protocol AdicionaRefeicaoDelegate {
     func add(_ refeicao: Refeicao)
 }
 
-class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AdicionarItensDelegate {
+    
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var itensTableView: UITableView?
     
     // MARK: - Atributos
     
     var delegate: AdicionaRefeicaoDelegate? // usa var pois a instância é setada na RefeicoesTableController
-    let itens: [Item] = [
+    var itens: [Item] = [
         Item(nome: "Peixe", calorias: 40.0),
         Item(nome: "Farinha de Trigo", calorias: 40.0),
         Item(nome: "Arroz", calorias: 40.0),
         Item(nome: "Macarrão", calorias: 40.0),
-        Item(nome: "Vegetais", calorias: 40.0),
-        Item(nome: "Molho para Yakisoba", calorias: 40.0)
+        //Item(nome: "Vegetais", calorias: 40.0),
+        //Item(nome: "Molho para Yakisoba", calorias: 40.0)
     ]
     var itensSelecionados: [Item] = []
     
@@ -42,8 +46,13 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     // adiciona @objc para o método poder ser usado em objective c
     @objc func adicionarItem() -> Void {
         print("adicionar item")
-        let adicionarItensViewController = AdicionarItensViewController()
+        let adicionarItensViewController = AdicionarItensViewController(delegate: self)
         navigationController?.pushViewController(adicionarItensViewController, animated: true)
+    }
+    
+    func add(_ item: Item) {
+        itens.append(item)
+        itensTableView?.reloadData()
     }
     
     // MARK: - UITableViewDataSource
