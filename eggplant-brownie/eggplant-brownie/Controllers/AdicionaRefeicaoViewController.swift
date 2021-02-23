@@ -52,7 +52,16 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     
     func add(_ item: Item) {
         itens.append(item)
-        itensTableView?.reloadData()
+        
+        if let tableView = itensTableView {
+            tableView.reloadData()
+        }
+        else {
+            let alerta = UIAlertController(title: "Desculpe", message: "Não foi possível atualizar a tabela", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alerta.addAction(ok)
+            present(alerta, animated: true, completion: nil)
+        }
     }
     
     // MARK: - UITableViewDataSource
@@ -117,11 +126,7 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
         
         let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: itensSelecionados)
         print("comi \(refeicao.nome) e fiquei com felicidade \(refeicao.felicidade)")
-        var ingredients = "Lista de ingredientes: "
-        for item: Item in itensSelecionados {
-            ingredients += item.nome + ", "
-        }
-        print(ingredients)
+        print(refeicao.detalhes())
         
         delegate?.add(refeicao)
         navigationController?.popViewController(animated: true)
