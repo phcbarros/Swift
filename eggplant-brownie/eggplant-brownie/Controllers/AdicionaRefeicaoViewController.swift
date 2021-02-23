@@ -31,6 +31,19 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet var nomeTextField: UITextField?
     @IBOutlet weak var felicidadeTextField: UITextField?
     
+    
+    // MARK: - View life cicle
+    override func viewDidLoad() {
+        let botaoAdicionarItem = UIBarButtonItem(title: "Add Item", style: .plain, target: self, action: #selector(adicionarItem))
+        
+        navigationItem.rightBarButtonItem = botaoAdicionarItem
+    }
+    
+    // adiciona @objc para o método poder ser usado em objective c
+    @objc func adicionarItem() -> Void {
+        print("adicionar item")
+    }
+    
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
