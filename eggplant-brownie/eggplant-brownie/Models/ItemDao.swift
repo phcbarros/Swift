@@ -1,5 +1,5 @@
 //
-//  RefeicaoDao.swift
+//  ItemDao.swift
 //  eggplant-brownie
 //
 //  Created by Paulo Barros on 24/02/21.
@@ -8,30 +8,27 @@
 
 import Foundation
 
-class RefeicoesDao {
+class ItemDao {
     
-    let nome = "refeicao"
+    let nome = "itens"
     
-    func salvar(_ refeicoes: [Refeicao]) -> Void {
+    func salvar(_ itens: [Item]) -> Void {
         guard let caminho = recuperarCaminhoDiretorio() else { return }
-        
         do {
-            let dados = try NSKeyedArchiver.archivedData(withRootObject: refeicoes, requiringSecureCoding: false)
-            // salva os dados
+            let dados = try NSKeyedArchiver.archivedData(withRootObject: itens, requiringSecureCoding: false)
             try dados.write(to: caminho)
-        } catch {
+        } catch  {
             print(error.localizedDescription)
         }
     }
     
-    func recuperar() -> [Refeicao] {
+    func recuperar() -> [Item] {
         guard let caminho = recuperarCaminhoDiretorio() else { return [] }
+        
         do {
             let dados = try Data(contentsOf: caminho)
-            guard let refeicoesSalvas = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(dados) as? [Refeicao]
-                else { return [] }
-            
-            return refeicoesSalvas
+            guard let itensSalvos = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(dados) as? [Item] else { return [] }
+            return itensSalvos
         } catch {
             print(error.localizedDescription)
             return []
