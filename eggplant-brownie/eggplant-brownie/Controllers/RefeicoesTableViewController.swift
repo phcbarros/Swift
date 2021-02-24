@@ -11,11 +11,20 @@ import UIKit
 
 class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDelegate {
     
-    var refeicoes = [
-        Refeicao(nome: "Temaki", felicidade: 5),
-        Refeicao(nome: "Hot-roll", felicidade: 5),
-        Refeicao(nome: "Yakisoba", felicidade: 4)
-    ]
+    var refeicoes: [Refeicao] = []
+    
+    override func viewDidLoad() {
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let caminho = diretorio.appendingPathComponent("refeicao")
+        
+        do {
+            let dados = try Data(contentsOf: caminho)
+            guard let refeicoesSalvas = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(dados) as? [Refeicao] else { return }
+            refeicoes = refeicoesSalvas
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     // número de linhas da tabela - obrigatório implementar esse método
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
