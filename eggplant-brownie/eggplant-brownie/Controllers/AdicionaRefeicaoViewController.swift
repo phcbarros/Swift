@@ -97,36 +97,34 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     }
     
     
-    // MARK: - IBActions
-    
-    @IBAction func adicionar(_ sender: Any) {
-        
-//        if let nomeDaRefeicao = nomeTextField?.text, let felicidadeDaReceicao = felicidadeTextField?.text {
-//            let nome = nomeDaRefeicao
-//            if let felicidade = Int(felicidadeDaReceicao) {
-//                let refeicao = Refeicao(nome: nome, felicidade: felicidade)
-//                print("comi \(refeicao.nome) e fiquei com felicidade \(refeicao.felicidade)")
-//            }
-//            else {
-//                print("Erro ao tentar criar a refeição")
-//            }
-//
-//        }
-        
+    func recuperaRefeicaoDoFormulario() -> Refeicao? {
         guard let nomeDaRefeicao = nomeTextField?.text else {
-            return
+            return nil
         }
         
         guard let felicidadeDaReceicao = felicidadeTextField?.text, let felicidade = Int(felicidadeDaReceicao)  else {
-            return
+            return nil
         }
         
         let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: itensSelecionados)
         print("comi \(refeicao.nome) e fiquei com felicidade \(refeicao.felicidade)")
         print(refeicao.detalhes())
         
-        delegate?.add(refeicao)
-        navigationController?.popViewController(animated: true)
+        return refeicao
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func adicionar(_ sender: Any) {
+       
+        
+        if let refeicao = recuperaRefeicaoDoFormulario() {
+            delegate?.add(refeicao)
+            navigationController?.popViewController(animated: true)
+        }
+        else {
+            Alerta(controller: self).exibe(mensagem: "Erro ao ler os dados do formulário")
+        }
     }
     
 }
