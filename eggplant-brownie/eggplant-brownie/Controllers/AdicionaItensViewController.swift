@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol AdicionarItensDelegate {
+protocol AdicionaItensDelegate {
     func add(_ item: Item)
 }
 
-class AdicionarItensViewController: UIViewController {
+class AdicionaItensViewController: UIViewController {
     
     // MARK: - View life cycle
     override func viewDidLoad() {
@@ -20,9 +20,9 @@ class AdicionarItensViewController: UIViewController {
     }
     
     // MARK: - Atributos
-    var delegate: AdicionarItensDelegate?
+    var delegate: AdicionaItensDelegate?
      
-    init(delegate: AdicionarItensDelegate) {
+    init(delegate: AdicionaItensDelegate) {
         super.init(nibName: "AdicionarItensViewController", bundle: nil)
         self.delegate = delegate
     }

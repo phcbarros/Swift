@@ -12,7 +12,7 @@ protocol AdicionaRefeicaoDelegate {
     func add(_ refeicao: Refeicao)
 }
 
-class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AdicionarItensDelegate {
+class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AdicionaItensDelegate {
     
     // MARK: - IBOutlet
     
@@ -46,7 +46,7 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     // adiciona @objc para o método poder ser usado em objective c
     @objc func adicionarItem() -> Void {
         print("adicionar item")
-        let adicionarItensViewController = AdicionarItensViewController(delegate: self)
+        let adicionarItensViewController = AdicionaItensViewController(delegate: self)
         navigationController?.pushViewController(adicionarItensViewController, animated: true)
     }
     
@@ -116,8 +116,6 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     // MARK: - IBActions
     
     @IBAction func adicionar(_ sender: Any) {
-       
-        
         if let refeicao = recuperaRefeicaoDoFormulario() {
             delegate?.add(refeicao)
             navigationController?.popViewController(animated: true)

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdicionarItensViewController" customModule="eggplant_brownie" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdicionaItensViewController" customModule="eggplant_brownie" customModuleProvider="target">
             <connections>
                 <outlet property="caloriasTextField" destination="FUq-xD-pRP" id="606-Xd-Li8"/>
                 <outlet property="nomeTextField" destination="73d-Hv-QQC" id="UIq-vP-ofl"/>
