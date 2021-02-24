@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2815D17B24B7B98C0043DA08 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815D17A24B7B98C0043DA08 /* Refeicao.swift */; };
 		2815D17D24B7B9D40043DA08 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815D17C24B7B9D40043DA08 /* Item.swift */; };
+		2854B52D25E69D5C0015C9B6 /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2854B52C25E69D5C0015C9B6 /* Alerta.swift */; };
 		2894251624AA6A6100C7E471 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894251524AA6A6100C7E471 /* AppDelegate.swift */; };
 		2894251824AA6A6100C7E471 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894251724AA6A6100C7E471 /* SceneDelegate.swift */; };
 		2894251A24AA6A6100C7E471 /* AdicionaRefeicaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894251924AA6A6100C7E471 /* AdicionaRefeicaoViewController.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2815D17A24B7B98C0043DA08 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
 		2815D17C24B7B9D40043DA08 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2854B52C25E69D5C0015C9B6 /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
 		28832ECA24ABF5DE0027DAF3 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ../../MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2894251224AA6A6100C7E471 /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2894251524AA6A6100C7E471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				2815D17A24B7B98C0043DA08 /* Refeicao.swift */,
 				2815D17C24B7B9D40043DA08 /* Item.swift */,
+				2854B52C25E69D5C0015C9B6 /* Alerta.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2854B52D25E69D5C0015C9B6 /* Alerta.swift in Sources */,
 				2815D17D24B7B9D40043DA08 /* Item.swift in Sources */,
 				2894251A24AA6A6100C7E471 /* AdicionaRefeicaoViewController.swift in Sources */,
 				28DF8BE825E57943005B2888 /* AdicionarItensViewController.swift in Sources */,
