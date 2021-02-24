@@ -41,12 +41,19 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
             guard let indexPath = tableView.indexPath(for: celula) else { return }
             
             let refeicao = refeicoes[indexPath.row]
-            
+           
             let alerta = UIAlertController(title: refeicao.nome, message: refeicao.detalhes(), preferredStyle: .alert)
-            let botaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler:nil)
+            let botaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel)
             alerta.addAction(botaoCancelar)
+            
+            let botaoRemover = UIAlertAction(title: "Remover", style: .destructive, handler: removerRefeicao)
+            alerta.addAction(botaoRemover)
             present(alerta, animated: true, completion: nil)
         }
+    }
+    
+    func removerRefeicao(alerta: UIAlertAction) {
+        print("remover")
     }
     
     // por questões de legibilibidade usamos o _ para ocultar o parametro
