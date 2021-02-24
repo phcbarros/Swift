@@ -33,6 +33,26 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
         return celula
     }
     
+    // por questões de legibilibidade usamos o _ para ocultar o parametro
+    func add(_ refeicao: Refeicao) -> Void {
+        refeicoes.append(refeicao)
+        tableView.reloadData()
+        
+        // recupera o nome do diretório
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        
+        // diretorio onde será salvo os dados
+        let caminho = diretorio.appendingPathComponent("refeicao")
+        
+        do {
+            let dados = try NSKeyedArchiver.archivedData(withRootObject: refeicoes, requiringSecureCoding: false)
+            // salva os dados
+            try dados.write(to: caminho)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     @objc func mostrarDetalhes(_ gesture: UILongPressGestureRecognizer) {
         if(gesture.state == .began) {
             let celula = gesture.view as! UITableViewCell
@@ -46,14 +66,6 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
                 self.tableView.reloadData()
             })
         }
-    }
-    
-    
-    
-    // por questões de legibilibidade usamos o _ para ocultar o parametro
-    func add(_ refeicao: Refeicao) -> Void {
-        refeicoes.append(refeicao)
-        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
