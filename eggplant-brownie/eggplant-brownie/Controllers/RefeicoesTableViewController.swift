@@ -40,17 +40,18 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
             //recupera o item da tabela que foi pressionado
             guard let indexPath = tableView.indexPath(for: celula) else { return }
             let refeicao = refeicoes[indexPath.row]
-            
-            func removerRefeicao(alerta: UIAlertAction) {
-                print("removeu \(refeicao.nome)")
-            }
            
             let alerta = UIAlertController(title: refeicao.nome, message: refeicao.detalhes(), preferredStyle: .alert)
             let botaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel)
             alerta.addAction(botaoCancelar)
             
-            let botaoRemover = UIAlertAction(title: "Remover", style: .destructive, handler: removerRefeicao)
+            let botaoRemover = UIAlertAction(title: "Remover", style: .destructive,
+                 handler: { alerta in
+                    self.refeicoes.remove(at: indexPath.row)
+                    self.tableView.reloadData()
+            })
             alerta.addAction(botaoRemover)
+            
             present(alerta, animated: true, completion: nil)
         }
     }
