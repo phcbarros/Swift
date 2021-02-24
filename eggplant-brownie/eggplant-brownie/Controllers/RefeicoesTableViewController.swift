@@ -39,8 +39,11 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
             
             //recupera o item da tabela que foi pressionado
             guard let indexPath = tableView.indexPath(for: celula) else { return }
-            
             let refeicao = refeicoes[indexPath.row]
+            
+            func removerRefeicao(alerta: UIAlertAction) {
+                print("removeu \(refeicao.nome)")
+            }
            
             let alerta = UIAlertController(title: refeicao.nome, message: refeicao.detalhes(), preferredStyle: .alert)
             let botaoCancelar = UIAlertAction(title: "Cancelar", style: .cancel)
@@ -52,9 +55,7 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
         }
     }
     
-    func removerRefeicao(alerta: UIAlertAction) {
-        print("remover")
-    }
+    
     
     // por questões de legibilibidade usamos o _ para ocultar o parametro
     func add(_ refeicao: Refeicao) -> Void {
