@@ -57,7 +57,7 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
             tableView.reloadData()
         }
         else {
-            Alerta(controller: self).exibe()
+            Alerta(controller: self).exibe(mensagem: "Não foi possível atualizar a tabela")
         }
     }
     
