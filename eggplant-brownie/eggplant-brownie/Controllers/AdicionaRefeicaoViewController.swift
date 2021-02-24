@@ -21,14 +21,7 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     // MARK: - Atributos
     
     var delegate: AdicionaRefeicaoDelegate? // usa var pois a instância é setada na RefeicoesTableController
-    var itens: [Item] = [
-        Item(nome: "Peixe", calorias: 40.0),
-        Item(nome: "Farinha de Trigo", calorias: 40.0),
-        Item(nome: "Arroz", calorias: 40.0),
-        Item(nome: "Macarrão", calorias: 40.0),
-        //Item(nome: "Vegetais", calorias: 40.0),
-        //Item(nome: "Molho para Yakisoba", calorias: 40.0)
-    ]
+    var itens: [Item] = []
     var itensSelecionados: [Item] = []
     
     // MARK: - IBOutlets
@@ -40,6 +33,15 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         let botaoAdicionarItem = UIBarButtonItem(title: "Add Item", style: .plain, target: self, action: #selector(adicionarItem))
         navigationItem.rightBarButtonItem = botaoAdicionarItem
+        guard let caminho = recuperarCaminhoDiretorio(arquivo: "itens") else { return }
+        
+        do {
+            let dados = try Data(contentsOf: caminho)
+            guard let itensSalvos = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(dados) as? [Item] else { return }
+            itens = itensSalvos
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     // adiciona @objc para o método poder ser usado em objective c
