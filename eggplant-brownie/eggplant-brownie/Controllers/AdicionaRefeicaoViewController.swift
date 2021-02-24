@@ -39,7 +39,6 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
     // MARK: - View life cycle
     override func viewDidLoad() {
         let botaoAdicionarItem = UIBarButtonItem(title: "Add Item", style: .plain, target: self, action: #selector(adicionarItem))
-        
         navigationItem.rightBarButtonItem = botaoAdicionarItem
     }
     
@@ -55,10 +54,25 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
         
         if let tableView = itensTableView {
             tableView.reloadData()
+            
+            guard let caminho = recuperarCaminhoDiretorio(arquivo: "itens") else { return }
+            do {
+                let dados = try NSKeyedArchiver.archivedData(withRootObject: itens, requiringSecureCoding: false)
+                try dados.write(to: caminho)
+            } catch  {
+                print(error.localizedDescription)
+            }
         }
         else {
             Alerta(controller: self).exibe(mensagem: "Não foi possível atualizar a tabela")
         }
+    }
+    
+    func recuperarCaminhoDiretorio(arquivo nome: String) -> URL? {
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let caminho = diretorio.appendingPathComponent(nome)
+        
+        return caminho
     }
     
     // MARK: - UITableViewDataSource
@@ -124,5 +138,4 @@ class AdicionaRefeicaoViewController: UIViewController, UITableViewDataSource, U
             Alerta(controller: self).exibe(mensagem: "Erro ao ler os dados do formulário")
         }
     }
-    
 }

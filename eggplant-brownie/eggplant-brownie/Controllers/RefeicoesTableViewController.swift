@@ -14,8 +14,7 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
     var refeicoes: [Refeicao] = []
     
     override func viewDidLoad() {
-        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let caminho = diretorio.appendingPathComponent("refeicao")
+        guard let caminho = recuperarCaminhoDiretorio(arquivo: "refeicao") else { return }
         
         do {
             let dados = try Data(contentsOf: caminho)
@@ -24,6 +23,13 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func recuperarCaminhoDiretorio(arquivo nome: String) -> URL? {
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let caminho = diretorio.appendingPathComponent(nome)
+        
+        return caminho
     }
     
     // número de linhas da tabela - obrigatório implementar esse método
