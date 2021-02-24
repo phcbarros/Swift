@@ -31,8 +31,10 @@ class Refeicao: NSObject, NSCoding {
         coder.encode(itens, forKey: "itens")
     }
     
-    required init?(coder: NSCoder) {
-        
+    required init?(coder decoder: NSCoder) {
+        nome = decoder.decodeObject(forKey: "nome") as! String
+        felicidade = decoder.decodeInteger(forKey: "felicidade")
+        itens = decoder.decodeObject(forKey: "itens") as! [Item]
     }
     
     // MARK: - Métodos
