@@ -14,24 +14,9 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
     var refeicoes: [Refeicao] = []
     
     override func viewDidLoad() {
-        guard let caminho = recuperarCaminhoDiretorio(arquivo: "refeicao") else { return }
-        
-        do {
-            let dados = try Data(contentsOf: caminho)
-            guard let refeicoesSalvas = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(dados) as? [Refeicao] else { return }
-            refeicoes = refeicoesSalvas
-        } catch {
-            print(error.localizedDescription)
-        }
+        refeicoes = RefeicoesDao().recuperar()
     }
-    
-    func recuperarCaminhoDiretorio(arquivo nome: String) -> URL? {
-        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-        let caminho = diretorio.appendingPathComponent(nome)
-        
-        return caminho
-    }
-    
+
     // número de linhas da tabela - obrigatório implementar esse método
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return refeicoes.count
@@ -53,19 +38,7 @@ class RefeicoesTableViewController : UITableViewController, AdicionaRefeicaoDele
         refeicoes.append(refeicao)
         tableView.reloadData()
         
-        // recupera o nome do diretório
-        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        
-        // diretorio onde será salvo os dados
-        let caminho = diretorio.appendingPathComponent("refeicao")
-        
-        do {
-            let dados = try NSKeyedArchiver.archivedData(withRootObject: refeicoes, requiringSecureCoding: false)
-            // salva os dados
-            try dados.write(to: caminho)
-        } catch {
-            print(error.localizedDescription)
-        }
+        RefeicoesDao().salvar(refeicoes)
     }
     
     @objc func mostrarDetalhes(_ gesture: UILongPressGestureRecognizer) {
