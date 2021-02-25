@@ -9,10 +9,13 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
     
-    let viagens: [String] = ["Rio de Janeiro", "Ceará", "São Paulo"]
+    let viagens: [Viagem] = ViagemDAO().retornaTodasAsViagens()
     
     // MARK: - IBOutlet
-    @IBOutlet weak var tabelaViagens: UITableView!
+    @IBOutlet weak var tabelaViagens: UITableView?
+    @IBOutlet weak var viewButtonHoteis: UIView?
+    @IBOutlet weak var viewButtonPacotes: UIView?
+    
     
     // MARK: - Init
     
@@ -20,7 +23,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         // define que o esse controller (self) irá controlar a tabela
-        self.tabelaViagens.dataSource = self
+        self.tabelaViagens?.dataSource = self
+        self.viewButtonHoteis?.layer.cornerRadius = 10
+        self.viewButtonPacotes?.layer.cornerRadius = 10
     }
     
     // MARK: - UITableViewDataSource
@@ -31,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
-        celula.textLabel?.text = viagens[indexPath.row]
+        celula.textLabel?.text = viagens[indexPath.row].titulo
         return celula
     }
     
