@@ -66,8 +66,8 @@
 			children = (
 				287FC07925E82447009CE3FE /* Assets */,
 				287FC06F25E81C33009CE3FE /* Models */,
-				287FC06E25E81C0F009CE3FE /* Views */,
-				287FC06D25E81BFD009CE3FE /* Controllers */,
+				287FC07D25E83227009CE3FE /* Home */,
+				287FC05E25E80BA3009CE3FE /* Main.storyboard */,
 				287FC05825E80BA3009CE3FE /* AppDelegate.swift */,
 				287FC05A25E80BA3009CE3FE /* SceneDelegate.swift */,
 				287FC06125E80BA4009CE3FE /* Assets.xcassets */,
@@ -77,23 +77,6 @@
 			path = "alura-viagens";
 			sourceTree = "<group>";
 		};
-		287FC06D25E81BFD009CE3FE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				287FC05C25E80BA3009CE3FE /* ViewController.swift */,
-				287FC07625E821A9009CE3FE /* TableViewCell.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		287FC06E25E81C0F009CE3FE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				287FC05E25E80BA3009CE3FE /* Main.storyboard */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		287FC06F25E81C33009CE3FE /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +84,31 @@
 				287FC07025E81C47009CE3FE /* Viagem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		287FC07D25E83227009CE3FE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				287FC07F25E83279009CE3FE /* View */,
+				287FC07E25E8325A009CE3FE /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		287FC07E25E8325A009CE3FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				287FC05C25E80BA3009CE3FE /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		287FC07F25E83279009CE3FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				287FC07625E821A9009CE3FE /* TableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
