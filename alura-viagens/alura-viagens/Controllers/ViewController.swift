@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let viagens: [Viagem] = ViagemDAO().retornaTodasAsViagens()
     
@@ -24,6 +24,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         // define que o esse controller (self) irá controlar a tabela
         self.tabelaViagens?.dataSource = self
+        
+        // define que esse controller irá implementar esses métodos
+        self.tabelaViagens?.delegate = self
         self.viewButtonHoteis?.layer.cornerRadius = 10
         self.viewButtonPacotes?.layer.cornerRadius = 10
     }
@@ -35,10 +38,22 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
-        celula.textLabel?.text = viagens[indexPath.row].titulo
+        // converte para a classe que vai controlar a celula
+        let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath) as! TableViewCell
+        
+       
+        let viagem = viagens[indexPath.row]
+        celula.labelTitulo.text = viagem.titulo
+        celula.labelQuantidadeDeDias.text = "\(viagem.quantidadeDeDias) dias"
+        celula.labelPreco.text = viagem.preco
+        celula.imagemViagem.image = UIImage(named: viagem.caminhoDaImagem)
+       
         return celula
     }
     
+    // MARK: - IUTableViewDelegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 175
+    }
 }
 
