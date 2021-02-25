@@ -45,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let viagem = viagens[indexPath.row]
         celula.labelTitulo.text = viagem.titulo
         celula.labelQuantidadeDeDias.text = "\(viagem.quantidadeDeDias) dias"
-        celula.labelPreco.text = viagem.preco
+        celula.labelPreco.text = "R$ \(viagem.preco)"
         celula.imagemViagem.image = UIImage(named: viagem.caminhoDaImagem)
         celula.imagemViagem.layer.cornerRadius = 10
         celula.imagemViagem.layer.masksToBounds = true
@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // aumenta efetivamente o tamanho da célula
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 175
+        return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone ? 175 : 260
     }
 }
 
