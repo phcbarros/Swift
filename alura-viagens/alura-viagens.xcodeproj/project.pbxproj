@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28280CB125E932EE00159492 /* PacotesViagensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28280CB025E932EE00159492 /* PacotesViagensViewController.swift */; };
+		28280CB425E933EA00159492 /* PacoteViagemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28280CB325E933EA00159492 /* PacoteViagemCollectionViewCell.swift */; };
 		287FC05925E80BA3009CE3FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FC05825E80BA3009CE3FE /* AppDelegate.swift */; };
 		287FC05B25E80BA3009CE3FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FC05A25E80BA3009CE3FE /* SceneDelegate.swift */; };
 		287FC05D25E80BA3009CE3FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FC05C25E80BA3009CE3FE /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28280CB025E932EE00159492 /* PacotesViagensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacotesViagensViewController.swift; sourceTree = "<group>"; };
+		28280CB325E933EA00159492 /* PacoteViagemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteViagemCollectionViewCell.swift; sourceTree = "<group>"; };
 		287FC05525E80BA3009CE3FE /* alura-viagens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alura-viagens.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		287FC05825E80BA3009CE3FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287FC05A25E80BA3009CE3FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28280CAC25E9328200159492 /* Pacotes */ = {
+			isa = PBXGroup;
+			children = (
+				28280CAF25E932A700159492 /* View */,
+				28280CAD25E9329800159492 /* Controller */,
+			);
+			path = Pacotes;
+			sourceTree = "<group>";
+		};
+		28280CAD25E9329800159492 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28280CB025E932EE00159492 /* PacotesViagensViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		28280CAF25E932A700159492 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28280CB325E933EA00159492 /* PacoteViagemCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		287FC04C25E80BA3009CE3FE = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +96,7 @@
 				287FC07925E82447009CE3FE /* Assets */,
 				287FC06F25E81C33009CE3FE /* Models */,
 				287FC07D25E83227009CE3FE /* Home */,
+				28280CAC25E9328200159492 /* Pacotes */,
 				287FC05E25E80BA3009CE3FE /* Main.storyboard */,
 				287FC05825E80BA3009CE3FE /* AppDelegate.swift */,
 				287FC05A25E80BA3009CE3FE /* SceneDelegate.swift */,
@@ -182,8 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28280CB125E932EE00159492 /* PacotesViagensViewController.swift in Sources */,
 				287FC07125E81C47009CE3FE /* Viagem.swift in Sources */,
 				287FC07425E81E73009CE3FE /* ViagemDAO.swift in Sources */,
+				28280CB425E933EA00159492 /* PacoteViagemCollectionViewCell.swift in Sources */,
 				287FC05D25E80BA3009CE3FE /* ViewController.swift in Sources */,
 				287FC07725E821A9009CE3FE /* TableViewCell.swift in Sources */,
 				287FC05925E80BA3009CE3FE /* AppDelegate.swift in Sources */,
