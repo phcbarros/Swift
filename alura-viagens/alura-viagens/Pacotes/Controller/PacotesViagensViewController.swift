@@ -9,29 +9,35 @@ import UIKit
 
 class PacotesViagensViewController: UIViewController {
 
-    let viagens: [Viagem] = ViagemDAO().retornaTodasAsViagens()
+    let listaTodasViagens: [Viagem] = ViagemDAO().retornaTodasAsViagens()
+    var listaViagens: [Viagem] = []
     
     // MARK: - IBOutlet
 
     @IBOutlet weak var colecaoPacotesViagem: UICollectionView!
+    @IBOutlet weak var pesquisarViagens: UISearchBar!
+    @IBOutlet weak var labelResultadoFiltro: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.colecaoPacotesViagem.dataSource = self
-        self.colecaoPacotesViagem.delegate = self
+        listaViagens = listaTodasViagens
+        colecaoPacotesViagem.dataSource = self
+        colecaoPacotesViagem.delegate = self
+        pesquisarViagens.delegate = self
+        labelResultadoFiltro.text = atualizarLabelResultadoFitlro()
     }
 }
 
 extension PacotesViagensViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viagens.count
+        return listaViagens.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! PacoteViagemCollectionViewCell
         
-        let viagemAtual = viagens[indexPath.item]
+        let viagemAtual = listaViagens[indexPath.item]
         
         celula.labelTitulo.text = viagemAtual.titulo
         celula.labelQuantidadeDeDias.text = "\(viagemAtual.quantidadeDeDias) \(viagemAtual.quantidadeDeDias == 1 ? "dia" : "dias")"
@@ -48,5 +54,25 @@ extension PacotesViagensViewController: UICollectionViewDataSource, UICollection
         let tamanhoCelula = collectionView.bounds.width / 2
         let espacamentoCelula = 15
         return CGSize(width: Int(tamanhoCelula) - espacamentoCelula, height: 160)
+    }
+}
+
+extension PacotesViagensViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        listaViagens = listaTodasViagens
+        
+        if (searchText != "") {
+            let filtroListaViagem = NSPredicate(format: "titulo contains %@", searchText)
+            let viagensFiltradas: [Viagem] = (listaTodasViagens as NSArray).filtered(using: filtroListaViagem) as! Array
+            listaViagens = viagensFiltradas
+        }
+      
+        labelResultadoFiltro.text = atualizarLabelResultadoFitlro()
+        colecaoPacotesViagem.reloadData()
+    }
+    
+    func atualizarLabelResultadoFitlro() -> String {
+        return listaViagens.count == 1 ? "1 resultado encontrado" : "\(listaViagens.count) resultados encontrados"
     }
 }
