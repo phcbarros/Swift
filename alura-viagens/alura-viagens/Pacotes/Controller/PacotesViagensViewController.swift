@@ -9,8 +9,8 @@ import UIKit
 
 class PacotesViagensViewController: UIViewController {
 
-    let listaTodasViagens: [Viagem] = ViagemDAO().retornaTodasAsViagens()
-    var listaViagens: [Viagem] = []
+    let listaTodasViagens: [PacoteViagem] = PacoteViagemDAO().retornaTodasAsViagens()
+    var listaViagens: [PacoteViagem] = []
     
     // MARK: - IBOutlet
 
@@ -37,12 +37,12 @@ extension PacotesViagensViewController: UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! PacoteViagemCollectionViewCell
         
-        let viagemAtual = listaViagens[indexPath.item]
+        let pacoteAtual = listaViagens[indexPath.item]
         
-        celula.labelTitulo.text = viagemAtual.titulo
-        celula.labelQuantidadeDeDias.text = "\(viagemAtual.quantidadeDeDias) \(viagemAtual.quantidadeDeDias == 1 ? "dia" : "dias")"
-        celula.labelPreco.text = "R$ \(viagemAtual.preco)"
-        celula.imagemViagem.image = UIImage(named: viagemAtual.caminhoDaImagem)
+        celula.labelTitulo.text = pacoteAtual.viagem.titulo
+        celula.labelQuantidadeDeDias.text = "\(pacoteAtual.viagem.quantidadeDeDias) \(pacoteAtual.viagem.quantidadeDeDias == 1 ? "dia" : "dias")"
+        celula.labelPreco.text = "R$ \(pacoteAtual.viagem.preco)"
+        celula.imagemViagem.image = UIImage(named: "Assets/\(pacoteAtual.viagem.caminhoDaImagem)")
         
         celula.layer.borderWidth = 0.5
         celula.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
@@ -71,7 +71,7 @@ extension PacotesViagensViewController: UISearchBarDelegate {
         
         if (searchText != "") {
             let filtroListaViagem = NSPredicate(format: "titulo[cd] contains %@", searchText)
-            let viagensFiltradas: [Viagem] = (listaTodasViagens as NSArray).filtered(using: filtroListaViagem) as! Array
+            let viagensFiltradas: [PacoteViagem] = (listaTodasViagens as NSArray).filtered(using: filtroListaViagem) as! Array
             listaViagens = viagensFiltradas
         }
       
