@@ -28,7 +28,7 @@ class PacotesViagensViewController: UIViewController {
     }
 }
 
-extension PacotesViagensViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension PacotesViagensViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listaViagens.count
@@ -55,6 +55,13 @@ extension PacotesViagensViewController: UICollectionViewDataSource, UICollection
         let espacamentoCelula = 15
         return CGSize(width: Int(tamanhoCelula) - espacamentoCelula, height: 160)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "detalhes")
+        
+        self.present(controller, animated: true, completion: nil)
+    }
 }
 
 extension PacotesViagensViewController: UISearchBarDelegate {
@@ -63,7 +70,7 @@ extension PacotesViagensViewController: UISearchBarDelegate {
         listaViagens = listaTodasViagens
         
         if (searchText != "") {
-            let filtroListaViagem = NSPredicate(format: "titulo contains %@", searchText)
+            let filtroListaViagem = NSPredicate(format: "titulo[cd] contains %@", searchText)
             let viagensFiltradas: [Viagem] = (listaTodasViagens as NSArray).filtered(using: filtroListaViagem) as! Array
             listaViagens = viagensFiltradas
         }
