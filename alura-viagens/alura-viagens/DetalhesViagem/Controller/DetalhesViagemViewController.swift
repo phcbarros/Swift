@@ -9,21 +9,35 @@ import UIKit
 
 class DetalhesViagemViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var pacoteSelecionado: PacoteViagem?
+    
+    // Mark: - IBOutlet
+    
+    @IBOutlet weak var imagemPacoteViagem: UIImageView!
+    @IBOutlet weak var labelTituloPacoteViagem: UILabel!
+    @IBOutlet weak var labelDesricaoPacoteViagem: UILabel!
+    @IBOutlet weak var labelDataViagem: UILabel!
+    @IBOutlet weak var labelPrecoPacoteViagem: UILabel!
+    
+    
+    // MARK: - IBAction
+    
+    @IBAction func botaoVoltar(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        preencherDados()
     }
-    */
-
+    
+    func preencherDados() -> Void {
+        if let pacote = pacoteSelecionado {
+            imagemPacoteViagem.image = UIImage(named: "Assets/\(pacote.viagem.caminhoDaImagem)")
+            labelTituloPacoteViagem.text = pacote.viagem.titulo
+            labelDesricaoPacoteViagem.text = pacote.descricao
+            labelDataViagem.text = pacote.dataViagem
+            labelPrecoPacoteViagem.text = "R$ \(pacote.viagem.preco)"
+        }
+    }
 }
