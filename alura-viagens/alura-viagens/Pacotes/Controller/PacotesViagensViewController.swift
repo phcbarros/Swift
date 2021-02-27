@@ -58,7 +58,7 @@ extension PacotesViagensViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "detalhes")
+        let controller = storyboard.instantiateViewController(identifier: "detalhes") as DetalhesViagemViewController
         
         self.present(controller, animated: true, completion: nil)
     }
