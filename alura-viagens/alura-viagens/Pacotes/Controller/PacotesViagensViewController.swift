@@ -42,7 +42,7 @@ extension PacotesViagensViewController: UICollectionViewDataSource, UICollection
         celula.labelTitulo.text = pacoteAtual.viagem.titulo
         celula.labelQuantidadeDeDias.text = "\(pacoteAtual.viagem.quantidadeDeDias) \(pacoteAtual.viagem.quantidadeDeDias == 1 ? "dia" : "dias")"
         celula.labelPreco.text = "R$ \(pacoteAtual.viagem.preco)"
-        celula.imagemViagem.image = UIImage(named: "Assets/\(pacoteAtual.viagem.caminhoDaImagem)")
+        celula.imagemViagem.image = UIImage(named: pacoteAtual.viagem.caminhoDaImagem)
         
         celula.layer.borderWidth = 0.5
         celula.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor

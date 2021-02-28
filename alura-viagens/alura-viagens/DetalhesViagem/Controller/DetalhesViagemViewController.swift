@@ -33,7 +33,7 @@ class DetalhesViagemViewController: UIViewController {
     
     func preencherDados() -> Void {
         if let pacote = pacoteSelecionado {
-            imagemPacoteViagem.image = UIImage(named: "Assets/\(pacote.viagem.caminhoDaImagem)")
+            imagemPacoteViagem.image = UIImage(named: pacote.viagem.caminhoDaImagem)
             labelTituloPacoteViagem.text = pacote.viagem.titulo
             labelDesricaoPacoteViagem.text = pacote.descricao
             labelDataViagem.text = pacote.dataViagem
