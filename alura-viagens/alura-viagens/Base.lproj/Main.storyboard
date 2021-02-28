@@ -397,15 +397,8 @@
                                     <constraint firstAttribute="height" constant="185" id="d8O-UX-4w0"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-HV-E1Q">
-                                <rect key="frame" x="17" y="14" width="41" height="30"/>
-                                <state key="normal" title="Voltar"/>
-                                <connections>
-                                    <action selector="botaoVoltar:" destination="Bs9-pS-vCU" eventType="touchUpInside" id="7ef-Gz-Ysh"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DZe-YD-4cF" userLabel="Stack View Principal">
-                                <rect key="frame" x="10" y="185" width="355" height="446.5"/>
+                                <rect key="frame" x="10" y="185" width="355" height="478"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PORTO DE GALINHAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-mf-hgv">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="31.5"/>
@@ -470,8 +463,15 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4N-8r-t6e">
+                                        <rect key="frame" x="0.0" y="142" width="355" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="IC2-Ri-XSM"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o que está incluso:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpO-4s-6kD">
-                                        <rect key="frame" x="0.0" y="142" width="355" height="28"/>
+                                        <rect key="frame" x="0.0" y="143" width="355" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="s6b-oU-VQS"/>
                                         </constraints>
@@ -480,7 +480,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="f8m-DD-VVw" userLabel="Stack View Beneficios">
-                                        <rect key="frame" x="0.0" y="170" width="355" height="90"/>
+                                        <rect key="frame" x="0.0" y="171" width="355" height="90"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ApN-uH-r9W" userLabel="Stack View Passagem">
                                                 <rect key="frame" x="0.0" y="0.0" width="118.5" height="90"/>
@@ -553,34 +553,49 @@
                                             <constraint firstAttribute="height" constant="90" id="Pqf-sJ-dIq"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7y-y0-o5v">
+                                        <rect key="frame" x="0.0" y="261" width="355" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="nxr-93-Jmk"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARTÃO DE CRÉDITO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdd-uc-f9c">
-                                        <rect key="frame" x="0.0" y="260" width="355" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="262" width="355" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="qAj-ll-g9X"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="número do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O71-Rq-6Im">
-                                        <rect key="frame" x="0.0" y="280.5" width="355" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nome do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiN-Xi-2ut">
-                                        <rect key="frame" x="0.0" y="314.5" width="355" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="data de validade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3f-ke-nfc">
-                                        <rect key="frame" x="0.0" y="348.5" width="355" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2p-uv-ucu">
-                                        <rect key="frame" x="0.0" y="382.5" width="355" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Os-El-z5I" userLabel="Stack View Dados Cartao">
+                                        <rect key="frame" x="0.0" y="297" width="355" height="151"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="número do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O71-Rq-6Im">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nome do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiN-Xi-2ut">
+                                                <rect key="frame" x="0.0" y="39" width="355" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="data de validade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3f-ke-nfc">
+                                                <rect key="frame" x="0.0" y="78" width="355" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2p-uv-ucu">
+                                                <rect key="frame" x="0.0" y="117" width="355" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdH-Ex-xid">
-                                        <rect key="frame" x="0.0" y="416.5" width="355" height="30"/>
+                                        <rect key="frame" x="0.0" y="448" width="355" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Finalizar compra">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -588,16 +603,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-HV-E1Q">
+                                <rect key="frame" x="5" y="8" width="25" height="25"/>
+                                <state key="normal" image="icon_back.png"/>
+                                <connections>
+                                    <action selector="botaoVoltar:" destination="Bs9-pS-vCU" eventType="touchUpInside" id="7ef-Gz-Ysh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WYb-d9-WLo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TCP-Su-cUM" firstAttribute="trailing" secondItem="WYb-d9-WLo" secondAttribute="trailing" id="8wO-gg-BHA"/>
                             <constraint firstItem="TCP-Su-cUM" firstAttribute="leading" secondItem="WYb-d9-WLo" secondAttribute="leading" id="AN2-D4-dTK"/>
-                            <constraint firstItem="ocy-HV-E1Q" firstAttribute="leading" secondItem="WYb-d9-WLo" secondAttribute="leading" constant="17" id="Du5-WG-qCs"/>
                             <constraint firstItem="DZe-YD-4cF" firstAttribute="leading" secondItem="WYb-d9-WLo" secondAttribute="leading" constant="10" id="GBS-iS-Akh"/>
-                            <constraint firstItem="ocy-HV-E1Q" firstAttribute="top" secondItem="WYb-d9-WLo" secondAttribute="top" constant="14" id="IvL-OY-joU"/>
                             <constraint firstItem="TCP-Su-cUM" firstAttribute="top" secondItem="WYb-d9-WLo" secondAttribute="top" id="JYV-QU-IZd"/>
+                            <constraint firstItem="ocy-HV-E1Q" firstAttribute="top" secondItem="WYb-d9-WLo" secondAttribute="top" constant="8" id="Ufc-fX-toh"/>
+                            <constraint firstItem="ocy-HV-E1Q" firstAttribute="leading" secondItem="WYb-d9-WLo" secondAttribute="leading" constant="5" id="ngb-L0-r1k"/>
                             <constraint firstItem="WYb-d9-WLo" firstAttribute="trailing" secondItem="DZe-YD-4cF" secondAttribute="trailing" constant="10" id="t1g-mO-u8L"/>
                             <constraint firstItem="DZe-YD-4cF" firstAttribute="top" secondItem="TCP-Su-cUM" secondAttribute="bottom" id="v7I-Qa-amO"/>
                         </constraints>
@@ -617,6 +639,7 @@
     </scenes>
     <resources>
         <image name="icon_airplane.png" width="50" height="50"/>
+        <image name="icon_back.png" width="50" height="50"/>
         <image name="icon_breakfast.png" width="50" height="50"/>
         <image name="icon_hotel.png" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
