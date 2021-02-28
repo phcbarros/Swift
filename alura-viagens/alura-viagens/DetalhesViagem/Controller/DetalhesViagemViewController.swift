@@ -18,7 +18,7 @@ class DetalhesViagemViewController: UIViewController {
     @IBOutlet weak var labelDesricaoPacoteViagem: UILabel!
     @IBOutlet weak var labelDataViagem: UILabel!
     @IBOutlet weak var labelPrecoPacoteViagem: UILabel!
-    
+    @IBOutlet weak var scrollPrincipal: UIScrollView!
     
     // MARK: - IBAction
     
@@ -29,6 +29,7 @@ class DetalhesViagemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         preencherDados()
+        notificarScroll()
     }
     
     func preencherDados() -> Void {
@@ -39,5 +40,13 @@ class DetalhesViagemViewController: UIViewController {
             labelDataViagem.text = pacote.dataViagem
             labelPrecoPacoteViagem.text = "R$ \(pacote.viagem.preco)"
         }
+    }
+    
+    func notificarScroll() -> Void {
+        NotificationCenter.default.addObserver(self, selector: #selector(aumentarScroll(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc func aumentarScroll(notification: Notification) {
+        self.scrollPrincipal.contentSize = CGSize(width: self.scrollPrincipal.frame.width, height: self.scrollPrincipal.frame.height + 320)
     }
 }
