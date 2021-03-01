@@ -255,7 +255,7 @@
                             <constraint firstItem="rd1-Qq-Umo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vHB-kT-Eu5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="procurar" selectedImage="icon_search.png" id="uxe-II-ML6"/>
+                    <tabBarItem key="tabBarItem" title="procurar" id="uxe-II-ML6"/>
                     <connections>
                         <outlet property="tabelaViagens" destination="btv-Iq-BF8" id="Pas-Ei-Mfm"/>
                         <outlet property="viewButtonHoteis" destination="N4H-iU-SNa" id="30h-Qa-Wzx"/>
@@ -381,7 +381,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RjF-g6-Uwx"/>
-                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94117647058823528" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dxI-Wu-jNX" secondAttribute="trailing" constant="15" id="4Va-fH-unB"/>
                             <constraint firstItem="dxI-Wu-jNX" firstAttribute="bottom" secondItem="RjF-g6-Uwx" secondAttribute="bottom" id="ZNl-mH-2gh"/>
@@ -389,7 +389,7 @@
                             <constraint firstItem="dxI-Wu-jNX" firstAttribute="leading" secondItem="RjF-g6-Uwx" secondAttribute="leading" constant="15" id="zzJ-Oc-zOM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="pacotes" selectedImage="icon_package.png" id="CmO-Os-9b1"/>
+                    <tabBarItem key="tabBarItem" title="pacotes" image="icon_package.png" id="CmO-Os-9b1"/>
                     <connections>
                         <outlet property="colecaoPacotesViagem" destination="hCh-df-IkG" id="dBW-zK-I7D"/>
                         <outlet property="labelResultadoFiltro" destination="mOo-zC-Ymd" id="6vN-kT-hy8"/>
@@ -815,7 +815,6 @@
         <image name="icon_breakfast.png" width="50" height="50"/>
         <image name="icon_hotel.png" width="50" height="50"/>
         <image name="icon_package.png" width="25" height="25"/>
-        <image name="icon_search.png" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

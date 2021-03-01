@@ -38,15 +38,7 @@ extension PacotesViagensViewController: UICollectionViewDataSource, UICollection
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! PacoteViagemCollectionViewCell
         
         let pacoteAtual = listaViagens[indexPath.item]
-        
-        celula.labelTitulo.text = pacoteAtual.viagem.titulo
-        celula.labelQuantidadeDeDias.text = "\(pacoteAtual.viagem.quantidadeDeDias) \(pacoteAtual.viagem.quantidadeDeDias == 1 ? "dia" : "dias")"
-        celula.labelPreco.text = "R$ \(pacoteAtual.viagem.preco)"
-        celula.imagemViagem.image = UIImage(named: pacoteAtual.viagem.caminhoDaImagem)
-        
-        celula.layer.borderWidth = 0.5
-        celula.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
-        celula.layer.cornerRadius = 8
+        celula.configurarCelula(pacote: pacoteAtual)
         return celula
     }
     
@@ -71,9 +63,10 @@ extension PacotesViagensViewController: UISearchBarDelegate {
         listaViagens = listaTodasViagens
         
         if (searchText != "") {
-            let filtroListaViagem = NSPredicate(format: "titulo[cd] contains %@", searchText)
-            let viagensFiltradas: [PacoteViagem] = (listaTodasViagens as NSArray).filtered(using: filtroListaViagem) as! Array
-            listaViagens = viagensFiltradas
+            //let filtroListaViagem = NSPredicate(format: "viagem.titulo[cd] contains %@", searchText)
+            //let viagensFiltradas: [PacoteViagem] = (listaTodasViagens as NSArray).filtered(using: filtroListaViagem) as! Array
+            //listaViagens = viagensFiltradas
+            listaViagens = listaViagens.filter({ $0.viagem.titulo.contains(searchText) })
         }
       
         labelResultadoFiltro.text = atualizarLabelResultadoFitlro()
