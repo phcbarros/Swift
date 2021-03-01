@@ -61,7 +61,7 @@ extension PacotesViagensViewController: UICollectionViewDataSource, UICollection
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "detalhes") as DetalhesViagemViewController
         controller.pacoteSelecionado = pacoteViagemSelecionado
-        self.present(controller, animated: true, completion: nil)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 

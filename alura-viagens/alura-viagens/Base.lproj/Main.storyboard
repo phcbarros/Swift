@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F6G-g4-Bwq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Sm-9r-TOr">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -13,6 +13,7 @@
         <scene sceneID="eOw-xl-7OM">
             <objects>
                 <tabBarController id="F6G-g4-Bwq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="U13-zM-80x"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aZq-lc-vUa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,7 +26,23 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNs-dk-cZi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-327" y="74"/>
+            <point key="canvasLocation" x="-294" y="72"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jV3-1p-kiF">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="7Sm-9r-TOr" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RFR-YP-HY2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="F6G-g4-Bwq" kind="relationship" relationship="rootViewController" id="BDx-db-QLx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mR-6L-Ruw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1172" y="72"/>
         </scene>
         <!--procurar-->
         <scene sceneID="tne-QT-ifu">
@@ -238,7 +255,7 @@
                             <constraint firstItem="rd1-Qq-Umo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vHB-kT-Eu5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="procurar" id="uxe-II-ML6"/>
+                    <tabBarItem key="tabBarItem" title="procurar" selectedImage="icon_search.png" id="uxe-II-ML6"/>
                     <connections>
                         <outlet property="tabelaViagens" destination="btv-Iq-BF8" id="Pas-Ei-Mfm"/>
                         <outlet property="viewButtonHoteis" destination="N4H-iU-SNa" id="30h-Qa-Wzx"/>
@@ -273,12 +290,12 @@
                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UhH-lf-i2e">
-                                        <rect key="frame" x="0.0" y="35" width="345" height="56"/>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="UhH-lf-i2e">
+                                        <rect key="frame" x="0.0" y="35" width="345" height="100"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 pacotes encontrados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOo-zC-Ymd">
-                                        <rect key="frame" x="0.0" y="96" width="345" height="30"/>
+                                        <rect key="frame" x="0.0" y="140" width="345" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Vpg-ay-XRl"/>
                                         </constraints>
@@ -287,7 +304,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hCh-df-IkG">
-                                        <rect key="frame" x="0.0" y="131" width="345" height="487"/>
+                                        <rect key="frame" x="0.0" y="175" width="345" height="443"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fIk-gc-Dgy">
                                             <size key="itemSize" width="135" height="160"/>
@@ -372,7 +389,7 @@
                             <constraint firstItem="dxI-Wu-jNX" firstAttribute="leading" secondItem="RjF-g6-Uwx" secondAttribute="leading" constant="15" id="zzJ-Oc-zOM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="pacotes" id="CmO-Os-9b1"/>
+                    <tabBarItem key="tabBarItem" title="pacotes" selectedImage="icon_package.png" id="CmO-Os-9b1"/>
                     <connections>
                         <outlet property="colecaoPacotesViagem" destination="hCh-df-IkG" id="dBW-zK-I7D"/>
                         <outlet property="labelResultadoFiltro" destination="mOo-zC-Ymd" id="6vN-kT-hy8"/>
@@ -400,8 +417,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3U-9E-iD4">
                                 <rect key="frame" x="0.0" y="185" width="385" height="482"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DZe-YD-4cF" userLabel="Stack View Principal">
-                                        <rect key="frame" x="28" y="0.0" width="328" height="478"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DZe-YD-4cF" userLabel="Stack View Principal">
+                                        <rect key="frame" x="28" y="0.0" width="328" height="528"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PORTO DE GALINHAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-mf-hgv">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="31.5"/>
@@ -410,19 +427,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pacote: Hotel + café da manhã" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXn-mI-3tp">
-                                                <rect key="frame" x="0.0" y="31.5" width="328" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="36.5" width="328" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 dias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuo-pJ-Cbu">
-                                                <rect key="frame" x="0.0" y="55" width="328" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="65" width="328" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7H8-4F-Uxs" userLabel="Stack View Periodo Valores">
-                                                <rect key="frame" x="0.0" y="78.5" width="328" height="63.5"/>
+                                                <rect key="frame" x="0.0" y="93.5" width="328" height="63.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jrk-4d-cbQ" userLabel="Stack View Periodo">
                                                         <rect key="frame" x="0.0" y="0.0" width="164" height="63.5"/>
@@ -467,14 +484,14 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4N-8r-t6e">
-                                                <rect key="frame" x="0.0" y="142" width="328" height="1"/>
+                                                <rect key="frame" x="0.0" y="162" width="328" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="IC2-Ri-XSM"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o que está incluso:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpO-4s-6kD">
-                                                <rect key="frame" x="0.0" y="143" width="328" height="28"/>
+                                                <rect key="frame" x="0.0" y="168" width="328" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="s6b-oU-VQS"/>
                                                 </constraints>
@@ -483,7 +500,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="f8m-DD-VVw" userLabel="Stack View Beneficios">
-                                                <rect key="frame" x="0.0" y="171" width="328" height="90"/>
+                                                <rect key="frame" x="0.0" y="201" width="328" height="90"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ApN-uH-r9W" userLabel="Stack View Passagem">
                                                         <rect key="frame" x="0.0" y="0.0" width="109.5" height="90"/>
@@ -557,14 +574,14 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7y-y0-o5v">
-                                                <rect key="frame" x="0.0" y="261" width="328" height="1"/>
+                                                <rect key="frame" x="0.0" y="296" width="328" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="nxr-93-Jmk"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARTÃO DE CRÉDITO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdd-uc-f9c">
-                                                <rect key="frame" x="0.0" y="262" width="328" height="35"/>
+                                                <rect key="frame" x="0.0" y="302" width="328" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="qAj-ll-g9X"/>
                                                 </constraints>
@@ -573,7 +590,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Os-El-z5I" userLabel="Stack View Dados Cartao">
-                                                <rect key="frame" x="0.0" y="297" width="328" height="151"/>
+                                                <rect key="frame" x="0.0" y="342" width="328" height="151"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="número do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O71-Rq-6Im">
                                                         <rect key="frame" x="0.0" y="0.0" width="328" height="34"/>
@@ -601,7 +618,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdH-Ex-xid">
-                                                <rect key="frame" x="0.0" y="448" width="328" height="30"/>
+                                                <rect key="frame" x="0.0" y="498" width="328" height="30"/>
                                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Finalizar compra">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -611,6 +628,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -636,7 +654,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WYb-d9-WLo"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="d3U-9E-iD4" firstAttribute="top" secondItem="TCP-Su-cUM" secondAttribute="bottom" id="7X4-bF-0PX"/>
                             <constraint firstItem="TCP-Su-cUM" firstAttribute="trailing" secondItem="WYb-d9-WLo" secondAttribute="trailing" id="8wO-gg-BHA"/>
@@ -661,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBi-N9-yGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229.5999999999999" y="64.31784107946028"/>
+            <point key="canvasLocation" x="2156" y="63"/>
         </scene>
         <!--Confirmacao Pagamento View Controller-->
         <scene sceneID="tRq-38-xqS">
@@ -778,6 +796,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="botaoVoltarParaHome" destination="Bvw-U6-JAT" id="XFl-pu-LEN"/>
                         <outlet property="imagemViagem" destination="Cnh-4M-gk8" id="kaj-5v-FJB"/>
                         <outlet property="labelDataViagem" destination="OLb-jz-ccd" id="GZj-gP-PYm"/>
                         <outlet property="labelDescricao" destination="gcj-RT-lO1" id="wPK-wl-Asu"/>
@@ -787,7 +806,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ee4-8c-iRt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3061.5999999999999" y="72.413793103448285"/>
+            <point key="canvasLocation" x="2991" y="73"/>
         </scene>
     </scenes>
     <resources>
@@ -795,6 +814,8 @@
         <image name="icon_back.png" width="50" height="50"/>
         <image name="icon_breakfast.png" width="50" height="50"/>
         <image name="icon_hotel.png" width="50" height="50"/>
+        <image name="icon_package.png" width="25" height="25"/>
+        <image name="icon_search.png" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

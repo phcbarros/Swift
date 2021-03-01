@@ -48,7 +48,7 @@ class DetalhesViagemViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func botaoVoltar(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func textFieldDataVencimentoCartao(_ sender: UITextView) {
@@ -70,6 +70,6 @@ class DetalhesViagemViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "confirmacaoPagamento") as! ConfirmacaoPagamentoViewController
         controller.pacoteComprado = pacote
-        self.present(controller, animated: true, completion: nil)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
