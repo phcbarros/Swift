@@ -19,12 +19,7 @@ class DetalhesViagemViewController: UIViewController {
     @IBOutlet weak var labelDataViagem: UILabel!
     @IBOutlet weak var labelPrecoPacoteViagem: UILabel!
     @IBOutlet weak var scrollPrincipal: UIScrollView!
-    
-    // MARK: - IBAction
-    
-    @IBAction func botaoVoltar(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    @IBOutlet weak var textFieldDataVencimentoCartao: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,5 +43,24 @@ class DetalhesViagemViewController: UIViewController {
     
     @objc func aumentarScroll(notification: Notification) {
         self.scrollPrincipal.contentSize = CGSize(width: self.scrollPrincipal.frame.width, height: self.scrollPrincipal.frame.height + 320)
+    }
+
+    // MARK: - IBAction
+    
+    @IBAction func botaoVoltar(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func textFieldDataVencimentoCartao(_ sender: UITextView) {
+        let datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = .date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(exibirDataTextField(sender:)), for: .valueChanged)
+    }
+    
+    @objc func exibirDataTextField(sender: UIDatePicker) {
+        let formatador = DateFormatter()
+        formatador.dateFormat = "dd/MM/yyyy"
+        textFieldDataVencimentoCartao.text = formatador.string(from: sender.date)
     }
 }

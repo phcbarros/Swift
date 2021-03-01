@@ -583,17 +583,20 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nome do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiN-Xi-2ut">
                                                         <rect key="frame" x="0.0" y="39" width="328" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="data de validade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3f-ke-nfc">
                                                         <rect key="frame" x="0.0" y="78" width="328" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldDataVencimentoCartao:" destination="Bs9-pS-vCU" eventType="editingDidBegin" id="Kyh-wH-EWd"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U2p-uv-ucu">
                                                         <rect key="frame" x="0.0" y="117" width="328" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -650,6 +653,7 @@
                         <outlet property="labelPrecoPacoteViagem" destination="ecS-nf-I85" id="Wij-hk-gNr"/>
                         <outlet property="labelTituloPacoteViagem" destination="fgc-mf-hgv" id="DKG-NA-pVr"/>
                         <outlet property="scrollPrincipal" destination="d3U-9E-iD4" id="Rap-ek-IO8"/>
+                        <outlet property="textFieldDataVencimentoCartao" destination="b3f-ke-nfc" id="a8M-2s-wJZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBi-N9-yGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
