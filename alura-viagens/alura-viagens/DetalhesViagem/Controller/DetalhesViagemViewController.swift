@@ -63,4 +63,13 @@ class DetalhesViagemViewController: UIViewController {
         formatador.dateFormat = "dd/MM/yyyy"
         textFieldDataVencimentoCartao.text = formatador.string(from: sender.date)
     }
+    
+    
+    @IBAction func botaoFinalizarCompra(_ sender: UIButton) {
+        guard let pacote = pacoteSelecionado else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "confirmacaoPagamento") as! ConfirmacaoPagamentoViewController
+        controller.pacoteComprado = pacote
+        self.present(controller, animated: true, completion: nil)
+    }
 }
