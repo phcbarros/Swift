@@ -43,9 +43,18 @@ extension PacotesViagensViewController: UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let tamanhoCelula = collectionView.bounds.width / 2
-        let espacamentoCelula = 15
-        return CGSize(width: Int(tamanhoCelula) - espacamentoCelula, height: 160)
+        
+        let isIPhone = UIDevice.current.userInterfaceIdiom == .phone ? true : false
+        let espacamentoCelula = 20
+        
+        if isIPhone {
+            let tamanhoCelula = collectionView.bounds.width / 2
+            return CGSize(width: Int(tamanhoCelula) - espacamentoCelula, height: 160)
+        }
+        
+        let tamanhoCelula = collectionView.bounds.width / 3
+        return CGSize(width: Int(tamanhoCelula) - espacamentoCelula, height: 250)
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -63,9 +72,6 @@ extension PacotesViagensViewController: UISearchBarDelegate {
         listaViagens = listaTodasViagens
         
         if (searchText != "") {
-            //let filtroListaViagem = NSPredicate(format: "viagem.titulo[cd] contains %@", searchText)
-            //let viagensFiltradas: [PacoteViagem] = (listaTodasViagens as NSArray).filtered(using: filtroListaViagem) as! Array
-            //listaViagens = viagensFiltradas
             listaViagens = listaViagens.filter({ $0.viagem.titulo.contains(searchText) })
         }
       
