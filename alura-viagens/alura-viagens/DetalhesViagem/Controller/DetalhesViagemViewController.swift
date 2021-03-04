@@ -32,7 +32,7 @@ class DetalhesViagemViewController: UIViewController {
             imagemPacoteViagem.image = UIImage(named: pacote.viagem.caminhoDaImagem)
             labelTituloPacoteViagem.text = pacote.viagem.titulo
             labelDesricaoPacoteViagem.text = pacote.descricao
-            labelDataViagem.text = pacote.dataViagem
+            labelDataViagem.text = "válido para o período de: \(pacote.dataViagem)"
             labelPrecoPacoteViagem.text = "R$ \(pacote.viagem.preco)"
         }
     }
@@ -43,6 +43,7 @@ class DetalhesViagemViewController: UIViewController {
     
     @objc func aumentarScroll(notification: Notification) {
         self.scrollPrincipal.contentSize = CGSize(width: self.scrollPrincipal.frame.width, height: self.scrollPrincipal.frame.height + 320)
+        self.scrollPrincipal.contentOffset.y = 200
     }
 
     // MARK: - IBAction
@@ -51,7 +52,7 @@ class DetalhesViagemViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func textFieldDataVencimentoCartao(_ sender: UITextView) {
+    @IBAction func textFieldDataVencimentoCartao(_ sender: UITextField) {
         let datePickerView = UIDatePicker()
         datePickerView.datePickerMode = .date
         sender.inputView = datePickerView
