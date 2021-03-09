@@ -49,7 +49,9 @@ class DetalhesViagemViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func botaoVoltar(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        if let navigation = navigationController {
+            navigation.popViewController(animated: true)
+        }
     }
     
     @IBAction func textFieldDataVencimentoCartao(_ sender: UITextField) {
