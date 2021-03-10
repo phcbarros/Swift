@@ -20,7 +20,8 @@ class Avaliador {
             if lance.valor > maiorDeTodos {
                 maiorDeTodos = lance.valor
             }
-            else if lance.valor < menorDeTodos {
+            
+            if lance.valor < menorDeTodos {
                 menorDeTodos = lance.valor
             }
         }

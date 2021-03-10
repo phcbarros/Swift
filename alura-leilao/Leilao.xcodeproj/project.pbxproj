@@ -18,6 +18,7 @@
 		03FA4B25209353AF0047D61B /* Lance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA4B24209353AF0047D61B /* Lance.swift */; };
 		03FA4B27209353CB0047D61B /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA4B26209353CB0047D61B /* Usuario.swift */; };
 		03FA4B29209354F50047D61B /* Leilao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA4B28209354F50047D61B /* Leilao.swift */; };
+		28367FD325F984D20034A175 /* AvaliadorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28367FD225F984D20034A175 /* AvaliadorTests.swift */; };
 		A23F5A0F209CA483000E6525 /* Avaliador.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F5A0E209CA483000E6525 /* Avaliador.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		03FA4B24209353AF0047D61B /* Lance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lance.swift; sourceTree = "<group>"; };
 		03FA4B26209353CB0047D61B /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		03FA4B28209354F50047D61B /* Leilao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leilao.swift; sourceTree = "<group>"; };
+		28367FD225F984D20034A175 /* AvaliadorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliadorTests.swift; sourceTree = "<group>"; };
 		A23F5A0E209CA483000E6525 /* Avaliador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avaliador.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 			children = (
 				03FA4B08209353290047D61B /* LeilaoTests.swift */,
 				03FA4B0A209353290047D61B /* Info.plist */,
+				28367FD225F984D20034A175 /* AvaliadorTests.swift */,
 			);
 			path = LeilaoTests;
 			sourceTree = "<group>";
@@ -227,18 +230,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Alura;
 				TargetAttributes = {
 					03FA4AEC209353270047D61B = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1240;
 					};
 					03FA4B03209353290047D61B = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1240;
 						TestTargetID = 03FA4AEC209353270047D61B;
 					};
 					03FA4B0E209353290047D61B = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1240;
 						TestTargetID = 03FA4AEC209353270047D61B;
 					};
 				};
@@ -310,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03FA4B09209353290047D61B /* LeilaoTests.swift in Sources */,
+				28367FD325F984D20034A175 /* AvaliadorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +389,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -407,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -442,6 +450,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -461,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -483,7 +492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apps.Leilao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -501,7 +510,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apps.Leilao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -521,7 +530,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apps.LeilaoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leilao.app/Leilao";
 			};
@@ -542,7 +551,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apps.LeilaoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leilao.app/Leilao";
 			};
@@ -562,7 +571,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apps.LeilaoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Leilao;
 			};
@@ -582,7 +591,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = apps.LeilaoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Leilao;
 			};
