@@ -12,6 +12,7 @@ class Avaliador {
     
     private var maiorDeTodos = Double.leastNonzeroMagnitude
     private var menorDeTodos = Double.greatestFiniteMagnitude
+    private var tresMaiores: [Lance] = []
     
     func avalia(leilao:Leilao) {
         guard let lances = leilao.lances else { return }
@@ -25,6 +26,8 @@ class Avaliador {
                 menorDeTodos = lance.valor
             }
         }
+        
+        pegarOsTresMaioresLances(leilao)
     }
     
     func maiorLance() -> Double {
@@ -33,6 +36,21 @@ class Avaliador {
     
     func menorLance() -> Double {
         return menorDeTodos
+    }
+    
+    func obterTresMaioresLances() -> [Lance] {
+        return tresMaiores
+    }
+    
+    private func pegarOsTresMaioresLances(_ leilao: Leilao) {
+        guard let lances = leilao.lances else { return }
+        
+        let lancesOrdenadosPorValorDescrescente = lances.sorted { (lance1, lance2) -> Bool in
+            return lance1.valor > lance2.valor
+        }
+        
+        let maioresLances = lancesOrdenadosPorValorDescrescente.prefix(3)
+        tresMaiores = Array(maioresLances)
     }
     
 }
